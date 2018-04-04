@@ -73,9 +73,8 @@ socket.on('newLocationMessage', function(message) {
 
 $("#message-form").on('submit', function (e) {
     e.preventDefault();
-
+    
     socket.emit('createMessage', {
-        from: 'User',
         text: $('#txtMessage').val()
     }, function (data) {
         $('#txtMessage').val('');
